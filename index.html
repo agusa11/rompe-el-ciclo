@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rompé el Ciclo — Clase gratuita</title>
+<meta name="description" content="Clase gratuita: rompé el ciclo de comer todo un día y no comer nada al otro. Mirá el video y hablemos personalmente por WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --bg: #fbf3ee;
+    --bg-soft: #f4e3da;
+    --ink: #3d2430;
+    --ink-soft: #7a5460;
+    --pink: #d8698a;
+    --wine: #7a1f3d;
+    --olive: #5c6b3c;
+    --whatsapp: #2f9a48;
+    --whatsapp-ink: #fbf3ee;
+    --line: #e6c9ba;
+    --card-bg: #ffffff;
+    --shadow: 220 60% 20%;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #241017;
+      --bg-soft: #2f1720;
+      --ink: #f5e6e0;
+      --ink-soft: #cf9fac;
+      --pink: #ef94ac;
+      --wine: #e58aa5;
+      --olive: #a3b877;
+      --whatsapp: #45c268;
+      --whatsapp-ink: #0f2115;
+      --line: #4a2732;
+      --card-bg: #2f1720;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #241017;
+    --bg-soft: #2f1720;
+    --ink: #f5e6e0;
+    --ink-soft: #cf9fac;
+    --pink: #ef94ac;
+    --wine: #e58aa5;
+    --olive: #a3b877;
+    --whatsapp: #45c268;
+    --whatsapp-ink: #0f2115;
+    --line: #4a2732;
+    --card-bg: #2f1720;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ background: var(--bg); }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .field{
+    position: relative;
+    isolation: isolate;
+  }
+  .field::before,
+  .field::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+    opacity: .35;
+  }
+  .field::before{
+    width: 420px; height: 420px;
+    top: -160px; left: -140px;
+    background: var(--pink);
+  }
+  .field::after{
+    width: 380px; height: 380px;
+    top: 120px; right: -160px;
+    background: var(--olive);
+    opacity: .22;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--wine);
+    background: color-mix(in srgb, var(--wine) 10%, transparent);
+    padding: .4rem .85rem;
+    border-radius: 999px;
+    margin-bottom: 1.5rem;
+  }
+  .eyebrow::before{
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--wine);
+    flex: none;
+  }
+
+  h1{
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    color: var(--pink);
+    font-size: clamp(2.1rem, 5.4vw, 3rem);
+    line-height: 1.14;
+    text-wrap: balance;
+    margin: 0 0 1.1rem;
+  }
+  h1 em{
+    font-style: italic;
+    color: var(--wine);
+  }
+
+  .subtitle{
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin: 0 0 2.5rem;
+  }
+
+  .video-frame{
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: .6rem;
+    box-shadow: 0 24px 48px -28px hsl(var(--shadow) / .45);
+    margin-bottom: 3.2rem;
+  }
+  .video-frame .ratio{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-frame iframe{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  .divider{
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    color: var(--ink-soft);
+    margin: 3.2rem 0 2.4rem;
+    font-size: .8rem;
+    letter-spacing: .04em;
+  }
+  .divider::before, .divider::after{
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: var(--line);
+  }
+
+  .cta{
+    text-align: left;
+  }
+  .cta h2{
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.35rem, 3.4vw, 1.7rem);
+    color: var(--ink);
+    text-wrap: balance;
+    margin: 0 0 .55rem;
+  }
+  .cta p{
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    margin: 0 0 1.4rem;
+    max-width: 46ch;
+  }
+
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: .95rem 1.7rem;
+    border-radius: 999px;
+    transition: transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 14px 28px -14px hsl(var(--shadow) / .5);
+  }
+  .btn:hover{ transform: translateY(-2px); }
+  .btn:focus-visible{
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+  }
+  .btn svg{ flex: none; }
+
+  .btn-whatsapp{
+    background: var(--whatsapp);
+    color: var(--whatsapp-ink);
+  }
+  .btn-outline{
+    background: transparent;
+    color: var(--olive);
+    border: 1.5px solid var(--olive);
+    box-shadow: none;
+  }
+  .btn-outline:hover{
+    background: color-mix(in srgb, var(--olive) 12%, transparent);
+  }
+
+  footer{
+    margin-top: 4rem;
+    font-size: .82rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .btn{ transition: none; }
+  }
+
+  @media (max-width: 420px){
+    .wrap{ padding: 3rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="field">
+  <div class="wrap">
+
+    <span class="eyebrow">Clase gratuita</span>
+
+    <h1>Rompé el ciclo: un día me como <em>todo</em>, al otro día no como <em>nada</em></h1>
+
+    <p class="subtitle">Mirá la clase que preparé para vos:</p>
+
+    <div class="video-frame">
+      <div class="ratio">
+        <iframe
+          src="https://www.youtube.com/embed/tjUV4_sHmlI"
+          title="Clase gratuita: rompé el ciclo de comer todo o no comer nada"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h2>¿Lista para que trabajemos esto juntas?</h2>
+      <p>Hablemos personalmente, contame tu situación y te acompaño a encontrar el camino.</p>
+      <a class="btn btn-whatsapp" href="https://api.whatsapp.com/message/3BAHJPJBO7OKN1?autoload=1&amp;app_absent=0" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M17.34 14.63c-.26-.13-1.56-.77-1.8-.86-.24-.09-.42-.13-.6.13-.18.26-.68.86-.84 1.04-.15.17-.31.2-.57.07-.26-.13-1.1-.4-2.1-1.28-.78-.68-1.3-1.53-1.46-1.79-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.47.13-.15.17-.26.26-.44.09-.17.04-.33-.02-.46-.07-.13-.6-1.43-.82-1.96-.22-.52-.44-.45-.6-.46-.15-.01-.33-.01-.51-.01-.17 0-.46.07-.7.33-.24.26-.92.9-.92 2.18 0 1.29.94 2.53 1.07 2.7.13.17 1.85 2.83 4.49 3.97.63.27 1.12.43 1.5.55.63.2 1.2.17 1.66.1.5-.08 1.56-.64 1.78-1.25.22-.62.22-1.14.15-1.25-.06-.11-.24-.18-.5-.31Z" fill="currentColor"/>
+          <path d="M12.03 4C7.18 4 3.25 7.93 3.25 12.78c0 1.56.41 3.08 1.19 4.42L3.2 21l3.9-1.02a9.55 9.55 0 0 0 4.92 1.34h.01c4.85 0 8.78-3.93 8.78-8.78a8.73 8.73 0 0 0-2.21-6.22A8.86 8.86 0 0 0 12.03 4Z" stroke="currentColor" stroke-width="1.4" fill="none"/>
+        </svg>
+        Hablar por WhatsApp
+      </a>
+    </div>
+
+    <div class="divider">o si preferís explorar sola</div>
+
+    <div class="cta">
+      <h2>Mirá también el programa</h2>
+      <p>Conocé cómo funciona el acompañamiento completo, paso a paso.</p>
+      <a class="btn btn-outline" href="https://agusa11.github.io/sanodestino-web/" target="_blank" rel="noopener">
+        Ver el programa
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 12 12 4M12 4H6M12 4v6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <footer>Un espacio para acompañarte, sin juicios.</footer>
+
+  </div>
+</div>
+</body>
+</html>
